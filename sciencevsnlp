@@ -1,0 +1,12 @@
+import markovify
+
+#open text file
+with open('sciencevs.txt') as file:
+    text = file.read()
+
+#train model 
+text_model = markovify.Text(text, well_formed = False)
+
+#print 10 sentences
+for i in range(10):
+    print(text_model.make_sentence())
